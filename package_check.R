@@ -1,4 +1,4 @@
-chk_pkgs 	<- c("BiocManager", "kableExtra", "openxlsx", "factoextra", "FactoMineR", "cowplot", "ggpubr", "mixOmics", "missMethyl", "PCAtools", "limma", "mCSEA")
+chk_pkgs 	<- c("BiocManager", "kableExtra", "openxlsx", "factoextra", "FactoMineR", "cowplot", "ggpubr", "mixOmics", "PCAtools", "limma", "mCSEA")
 
 suppressPackageStartupMessages(
   sapply(chk_pkgs, require, character.only=TRUE, quietly=FALSE, warn.conflicts=FALSE)
@@ -11,4 +11,4 @@ if (length(missing_pkgs) > 0) {
           paste0(sprintf("  - %s", missing_pkgs), collapse="\n"))
 }
 
-quit(save=FALSE, status=length(names) == 0, runLast = FALSE)
+quit(save="no", status=length(names) == 0, runLast = FALSE)
