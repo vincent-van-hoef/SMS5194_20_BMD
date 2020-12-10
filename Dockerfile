@@ -2,7 +2,7 @@ FROM jupyter/datascience-notebook:r-4.0.3
 
 USER root
 
-COPY package_check.R /home/joyvan/package_check.R
+COPY package_check.R /home/jovyan/package_check.R
 
 RUN apt-get update && apt-get install -y \
     libglpk-dev \
