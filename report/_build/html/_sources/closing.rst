@@ -1,0 +1,9 @@
+==================
+Closing Procedures
+==================
+
+You should soon be contacted by one of our managers, Jessica Lindvall (`jessica.lindvall@nbis.se <jessica.lindvall@nbis.se>`_) or Henrik Lantz (`henrik.lantz@nbis.se	<henrik.lantz@nbis.se>`_), with a request to close down the project in our internal system and for invoicing matters. If we do not hear from you within **30 days** the project will be automatically closed and invoice sent. Again, we would like to remind you about data responsibility and acknowledgements, see Data Responsibility and Acknowledgments sections.
+
+You are naturally more than welcome to come back to us with further data analysis request at any time via `NBIS support	<http://nbis.se/support/support.html>`_.
+
+Thank you for using NBIS and all the best for future research.
