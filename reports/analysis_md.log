@@ -17,19 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-
-This is text
+plot(a)
 ------------------
 
-Error in parse(text = x, srcfile = src): <text>:2:6: unexpected symbol
-1: 
-2: This is
-        ^
+Error in plot(a): object 'a' not found
 Traceback:
 
-ERROR: Error in parse(text = x, srcfile = src): <text>:2:6: unexpected symbol
-1: 
-2: This is
-        ^
+1. plot(a)
+ERROR: Error in plot(a): object 'a' not found
 
 
