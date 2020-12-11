@@ -12,6 +12,7 @@
   chapters:
   - file: material_methods
   - file: analysis
+  - file: analysis_md
 - part: Administration
   chapters:
   - file: data_responsibility
