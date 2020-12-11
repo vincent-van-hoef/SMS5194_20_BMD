@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Analysis &#8212; Project #5194</title>
+    <title>Example &#8212; Project #5194</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example" href="analysis_md.html" />
+    <link rel="next" title="Data Responsibility" href="data_responsibility.html" />
     <link rel="prev" title="Material and Methods" href="material_methods.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,11 +123,6 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="analysis_md.html">
    Example
   </a>
  </li>
@@ -193,9 +188,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/analysis.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/analysis.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -234,7 +229,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/report/analysis.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/report/analysis.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -258,36 +253,68 @@
         
               <div>
                 
-  <div class="section" id="analysis">
-<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
-<p>This is where the Analysis happens</p>
+  <div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;htmlwidgets&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">DT</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This text is <strong>standard</strong> <em>Markdown</em></p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">is</span> <span class="n">text</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;kableExtra&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;knitr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;openxlsx&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;PCAtools&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;factoextra&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;FactoMineR&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;cowplot&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;ggpubr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;limma&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;openxlsx&quot;</span><span class="p">)</span>
+<span class="n">db_file</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/external/Human_GO_bp_no_GO_iea_symbol.gmt&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">symbol</span>
-<span class="mi">1</span><span class="p">:</span> 
-<span class="mi">2</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span>
-        <span class="o">^</span>
-<span class="ne">Traceback</span>:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggrepel
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘PCAtools’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    biplot, screeplot
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘ggpubr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:cowplot’:
+
+    get_legend
 </pre></div>
 </div>
 </div>
+</div>
+<p>plot now</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">250</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/analysis_3_0.png" src="_images/analysis_3_0.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This page itself is written as an <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> notebook!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page itself is written as an <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> notebook!</p>
 </div>
 </div>
 
@@ -320,7 +347,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="material_methods.html" title="previous page">Material and Methods</a>
-    <a class='right-next' id="next-link" href="analysis_md.html" title="next page">Example</a>
+    <a class='right-next' id="next-link" href="data_responsibility.html" title="next page">Data Responsibility</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
