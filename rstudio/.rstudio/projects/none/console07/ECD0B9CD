@@ -365,4 +365,472 @@ Or paste this line directly into your browser bar:
 
 [92m===============================================================================[0m
 
-]0;/homerstudio@738bfc3ce457:/home$ 
+jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mno targets are out of date.[39;49;00m
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/[1P report/[1P report/[1P report/[1P report/[1P report/c report/l report/e report/a report/n report/
+
+[92m===============================================================================[0m
+
+Your _build directory has been emptied except for .jupyter_cache
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb clean report/build[C[C[C[C[C[C[C[C
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mmaking output directory... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 8 source files that are out of date
+[01mupdating environment: [39;49;00m[new config] 8 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m[ 12%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 25%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 37%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+[01mreading sources... [39;49;00m[ 50%] [35mclosing[39;49;00m                                                                                             [01mreading sources... [39;49;00m[ 62%] [35mdata_responsibility[39;49;00m                                                                                 [01mreading sources... [39;49;00m[ 75%] [35mintro[39;49;00m                                                                                               [01mreading sources... [39;49;00m[ 87%] [35mmaterial_methods[39;49;00m                                                                                    [01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 12%] [32macknowledgements[39;49;00m                                                                                     [01mwriting output... [39;49;00m[ 25%] [32magreed_analyses[39;49;00m                                                                                      [01mwriting output... [39;49;00m[ 37%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[ 50%] [32mclosing[39;49;00m                                                                                              [01mwriting output... [39;49;00m[ 62%] [32mdata_responsibility[39;49;00m                                                                                  [01mwriting output... [39;49;00m[ 75%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[ 87%] [32mmaterial_methods[39;49;00m                                                                                     [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mno targets are out of date.[39;49;00m
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mno targets are out of date.[39;49;00m
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded, 1 warning.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_4_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_4_0.png[39;49;00m                                                              
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ ls
+data  docker-compose.test.yml  Dockerfile  documentation  package_check.R  README.md  report  results  rstudio	scripts
+]0;/homerstudio@24f6b804384b:/home$ cd scripts/
+]0;/home/scriptsrstudio@24f6b804384b:/home/scripts$ cd scripts/ls[Kcd scripts/[Kcd ..
+]0;/homerstudio@24f6b804384b:/home$ cd ..scripts/ls[Kjb build report/clean[C[C[C[C[C[C[C[Cbuild[C[C[C[C[C[C[C[C
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 2 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 2 changed, 0 removed
+[01mreading sources... [39;49;00m[ 50%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+[01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
+[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 33%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[ 66%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded, 1 warning.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ jb build report/
+[32m[1mRunning Jupyter-Book v0.8.3[0m
+[34m[1mSource Folder: [0m/home/report
+[34m[1mConfig Path: [0m/home/report/_config.yml
+[34m[1mOutput Path: [0m/home/report/_build/html
+[01mRunning Sphinx v3.3.1[39;49;00m
+[01mloading pickled environment... [39;49;00mdone
+[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
+[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
+
+[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded, 1 warning.[39;49;00m
+
+The HTML pages are in report/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    report/_build/html/
+You can look at your book by opening this file in a browser:
+    report/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/report/_build/html/index.html            
+
+[92m===============================================================================[0m
+
+]0;/homerstudio@24f6b804384b:/home$ [Krstudio@24f6b804384b:/home$ [Krstudio@24f6b804384b:/home$ 

@@ -18,6 +18,6 @@ RUN pip3 install -U jupyter-book ghp-import jupytext
 
 RUN R -e "install.packages(c('devtools', 'kableExtra', 'openxlsx', 'factoextra', 'FactoMineR', 'cowplot', 'ggpubr'), repos = 'https://cran.rstudio.com')"
 
-RUN R -e "BiocManager::install(c('mixOmics', 'PCAtools', 'limma', 'mCSEA'))"
+RUN R -e "BiocManager::install(c('mixOmics', 'PCAtools', 'pcaExplorer', 'limma', 'mCSEA'))"
 
 RUN R -e "devtools::install_github('IRkernel/IRkernel'); IRkernel::installspec()"

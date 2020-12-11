@@ -126,6 +126,11 @@
    Example
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data">
+   Data
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -246,6 +251,90 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Example
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pca-of-methylation-data">
+       PCA of methylation data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#differential-methylation-bmd-and-fractures">
+       Differential methylation BMD and Fractures
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#probe-level">
+         Probe Level
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#region-level">
+         Region Level
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#differential-methylation-qct">
+       Differential methylation QCT
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Probe Level
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Region Level
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qct-data">
+       QCT Data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pca">
+         PCA
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#comparative-statistics">
+         Comparative statistics
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -255,66 +344,355 @@
                 
   <div class="section" id="example">
 <h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove_input docutils container">
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;kableExtra&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;knitr&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;openxlsx&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;PCAtools&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;factoextra&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;FactoMineR&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;cowplot&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;ggpubr&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;limma&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;openxlsx&quot;</span><span class="p">)</span>
-<span class="n">db_file</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/external/Human_GO_bp_no_GO_iea_symbol.gmt&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggrepel
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘PCAtools’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and clean data...</span>
+<span class="n">MQ</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;../data/external/MQ.RData&quot;</span><span class="p">)</span>
+<span class="n">MNQ</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;../data/external/MNQ.RData&quot;</span><span class="p">)</span>
+<span class="n">MNQC</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;../data/external/MNQC.RData&quot;</span><span class="p">)</span>
+<span class="n">annotation</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;../data/external/annotation.RDS&quot;</span><span class="p">)</span>
+<span class="n">ann</span> <span class="o">&lt;-</span> <span class="n">annotation</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">MNQC</span><span class="p">),</span> <span class="n">annotation</span><span class="o">$</span><span class="n">Name</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">12</span><span class="o">:</span><span class="m">19</span><span class="p">,</span> <span class="m">22</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">annotation</span><span class="p">))]</span>
+<span class="n">QCT</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../data/external/SuperG_pQCT_PE.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;;&quot;</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="s">&quot;.&quot;</span><span class="p">,</span> <span class="n">strip.white</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">phenoData</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;../data/external/phenoData.RData&quot;</span><span class="p">)</span>
+<span class="n">pheno</span>	<span class="o">&lt;-</span> <span class="n">phenoData</span> <span class="o">%&gt;%</span>
+    <span class="nf">as.data.frame</span><span class="p">()</span> <span class="o">%&gt;%</span>
+    <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="n">Basename</span><span class="p">,</span> <span class="n">filenames</span><span class="p">,</span> <span class="n">xMed</span><span class="p">,</span> <span class="n">yMed</span><span class="p">,</span> <span class="n">predictedSex</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">Fx</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">Fx</span> <span class="o">==</span> <span class="m">0</span><span class="p">,</span> <span class="s">&quot;noFx&quot;</span><span class="p">,</span> <span class="s">&quot;Fx&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">Batch</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">Batch</span> <span class="o">==</span> <span class="m">1</span><span class="p">,</span> <span class="s">&quot;Batch1&quot;</span><span class="p">,</span> <span class="s">&quot;Batch2&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">slide_array</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">Slide</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">group</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">BMD</span><span class="p">,</span> <span class="n">Fx</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">sample_name</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;blood.*&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">sample_names</span><span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;MKB&quot;</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">left_join</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">QCT</span><span class="p">,</span> 
+                    <span class="n">id</span><span class="p">,</span> 
+                    <span class="n">TRAB_A_RAD_4</span><span class="p">,</span> 
+                    <span class="n">TRAB_DEN_RAD_4</span><span class="p">,</span> 
+                    <span class="n">TOT_A_RAD_4</span><span class="p">,</span> 
+                    <span class="n">TOT_DEN_RAD_4</span><span class="p">,</span> 
+                    <span class="n">CRT_A_RAD_4</span><span class="p">,</span> 
+                    <span class="n">CRT_DEN_RAD_4</span><span class="p">,</span> 
+                    <span class="n">CRT_THK_C_RAD_4</span><span class="p">),</span> <span class="n">by</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;sample_names&quot;</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="n">Slide</span><span class="p">,</span> <span class="n">Array</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate_at</span><span class="p">(</span><span class="n">.vars</span> <span class="o">=</span> <span class="nf">vars</span><span class="p">(</span><span class="s">&quot;Chip.number&quot;</span><span class="p">,</span> <span class="s">&quot;Batch&quot;</span><span class="p">,</span> <span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="s">&quot;Fx&quot;</span><span class="p">,</span> <span class="s">&quot;group&quot;</span><span class="p">),</span> <span class="n">factor</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="n">tibble</span><span class="o">::</span><span class="nf">column_to_rownames</span><span class="p">(</span><span class="n">var</span> <span class="o">=</span> <span class="s">&quot;sample_name&quot;</span><span class="p">)</span>
 
-    biplot, screeplot
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘ggpubr’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:cowplot’:
-
-    get_legend
+<span class="nf">colnames</span><span class="p">(</span><span class="n">MQ</span><span class="p">)</span>	<span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">pheno</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">MQ</span><span class="p">),</span> <span class="n">pheno</span><span class="o">$</span><span class="n">slide_array</span><span class="p">),])</span> 
+<span class="nf">colnames</span><span class="p">(</span><span class="n">MNQ</span><span class="p">)</span>	<span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">pheno</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">MNQ</span><span class="p">),</span> <span class="n">pheno</span><span class="o">$</span><span class="n">slide_array</span><span class="p">),])</span> 
 </pre></div>
 </div>
 </div>
 </div>
-<p>plot now</p>
+</div>
+<div class="section" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<p>The methylation data has been preprocessed by the user in three different ways:</p>
+<ul class="simple">
+<li><p>Normalization (Quantile)</p></li>
+<li><p>Normalization (Quantile) and background correction (Noob)</p></li>
+<li><p>Normalization (Quantile) and background correction (Noob) and batch correction (Combat)</p></li>
+</ul>
+<p>The author of a paper on <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0503-2">the normalization of methylation data</a> proposes the <a class="reference external" href="https://www.biostars.org/p/149628/">combination of Noob and Quantile normalization</a> as appropriate in situations where no large global differences are expected (as in e.g. whole blood samples such as here).
+So, the base dataset to work on will be the Noob+Quantile normalized dataset.</p>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pca-of-methylation-data">
+<h3>PCA of methylation data<a class="headerlink" href="#pca-of-methylation-data" title="Permalink to this headline">¶</a></h3>
+<p>Using <a class="reference external" href="http://setosa.io/ev/principal-component-analysis">Principal Component Analysis</a> (PCA), we examine the structure of the data by projecting the samples on a two-dimensional graph using the principal components that explain the most variation between those samples. The resulting plot can be used to examine the samples for biological conditions, outliers, sample swaps or other relationships between the samples. When normalization successfully removed technical artefacts, the relative distances should be biologically interpretable. In Figure &#64;ref(fig:pcafig-all), you can see the result of a PCA analysis using all probes on PC1 and PC2 and coloration according to BMD and Fracture combination. The thicker symbols indicate the “median” of each subgroup. No type of structure is immediately visible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">250</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">m_all</span> <span class="o">&lt;-</span> <span class="n">MNQ</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="nf">rowVars</span><span class="p">(</span><span class="n">MNQ</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="p">][,]</span>
+<span class="n">m_all</span> <span class="o">&lt;-</span> <span class="n">m_all</span><span class="p">[,</span><span class="nf">rownames</span><span class="p">(</span><span class="n">pheno</span><span class="p">)]</span>
+<span class="n">p_all</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">m_all</span><span class="p">),</span> <span class="n">scale.</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">fviz_pca_ind</span><span class="p">(</span><span class="n">p_all</span><span class="p">,</span>
+         <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+         <span class="n">geom.ind</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;point&quot;</span><span class="p">,</span> <span class="s">&quot;text&quot;</span><span class="p">),</span>
+         <span class="n">pointshape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span>
+         <span class="n">fill.ind</span> <span class="o">=</span> <span class="n">pheno</span><span class="o">$</span><span class="n">group</span><span class="p">,</span>
+         <span class="n">palette</span> <span class="o">=</span> <span class="s">&quot;jco&quot;</span><span class="p">,</span>
+         <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;All probes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/analysis_3_0.png" src="_images/analysis_3_0.png" />
+</div>
+<p>Digging deeper, we can list the p values of the correlation of the different types of metadata with the principal components (see Table &#64;ref(tab:pca-table)) to detect structure in the data. A Kruskal-Wallis (for categorical metadata) or a Spearman correlation (for continuous metadata) is performed on the first 10 principal components. Significant structure in the data would show up as significant p values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">corr_all</span> <span class="o">&lt;-</span> <span class="nf">correlatePCs</span><span class="p">(</span><span class="n">p_all</span><span class="p">,</span> <span class="n">coldata</span><span class="o">=</span><span class="n">pheno</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;group&quot;</span><span class="p">,</span> <span class="s">&quot;Fx&quot;</span><span class="p">,</span> <span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="s">&quot;Batch&quot;</span><span class="p">,</span> <span class="s">&quot;TRAB_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TRAB_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TOT_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TOT_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_THK_C_RAD_4&quot;</span><span class="p">)],</span> <span class="n">pcs</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="n">corr_all</span> <span class="o">%&gt;%</span>
+   <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">corr_all</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">corr_all</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">rownames_to_column</span><span class="p">()</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate</span><span class="p">(</span><span class="n">rowname</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="n">rowname</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">rename_all</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">,</span> <span class="o">~</span> <span class="nf">round</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">,</span> <span class="o">~</span><span class="nf">cell_spec</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">.</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">)))</span> <span class="o">%&gt;%</span>
+   <span class="nf">column_to_rownames</span><span class="p">()</span> <span class="o">%&gt;%</span>
+   <span class="nf">kable</span><span class="p">(</span><span class="n">escape</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">caption</span> <span class="o">=</span> <span class="s">&quot;P values of correlation test of metadata with PCs. Kruskal-Willis test for categorical data and Spearman correlation for continuous data. PCA calculated using all probes.&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+   <span class="nf">kable_styling</span><span class="p">(</span><span class="n">full_width</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">latex_options</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;scale_down&quot;</span><span class="p">,</span> <span class="s">&quot;hold_position&quot;</span><span class="p">))</span>
+</pre></div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This page itself is written as an <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> notebook!</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page itself is written as an <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> notebook!</p>
+<p>The largest structure seems to be the Batch effect. This can be visualized using in particular PC4 vs PC5 in Figure &#64;ref(fig:pca-batch).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">fviz_pca_ind</span><span class="p">(</span><span class="n">p_all</span><span class="p">,</span>
+         <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">),</span>
+         <span class="n">geom.ind</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;point&quot;</span><span class="p">,</span> <span class="s">&quot;text&quot;</span><span class="p">),</span>
+         <span class="n">pointshape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span>
+         <span class="n">fill.ind</span> <span class="o">=</span> <span class="n">pheno</span><span class="o">$</span><span class="n">Batch</span><span class="p">,</span>
+         <span class="n">palette</span> <span class="o">=</span> <span class="s">&quot;jco&quot;</span><span class="p">,</span>
+         <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;All probes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do we see more structure if we restrict the data to the 10 000 most variable probes? See Figure &#64;ref(fig:pcafig-var) for the PCA visualization using 10 000 most variable probes. Again, obvious structure in the data according to the biological conditions seems absent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">m_var</span>	<span class="o">&lt;-</span> <span class="n">m_all</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">,]</span>
+<span class="n">p_var</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">m_var</span><span class="p">),</span> <span class="n">scale.</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">fviz_pca_ind</span><span class="p">(</span><span class="n">p_var</span><span class="p">,</span>
+         <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+         <span class="n">geom.ind</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;point&quot;</span><span class="p">,</span> <span class="s">&quot;text&quot;</span><span class="p">),</span>
+         <span class="n">pointshape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span>
+         <span class="n">fill.ind</span> <span class="o">=</span> <span class="n">pheno</span><span class="o">$</span><span class="n">group</span><span class="p">,</span>
+         <span class="n">palette</span> <span class="o">=</span> <span class="s">&quot;jco&quot;</span><span class="p">,</span>
+         <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;10 000 most variable probes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we can list the p values of the correlation of the metadata with the principal components calculated using the most variable probes (see Table &#64;ref(tab:pca-var-table)). A Kruskal-Wallis (for categorical metadata) or a Spearman correlation (for continuous metadata) is performed on the first 10 principal components. Significant structure in the data would show up as significant p values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">corr_var</span> <span class="o">&lt;-</span> <span class="nf">correlatePCs</span><span class="p">(</span><span class="n">p_var</span><span class="p">,</span> <span class="n">coldata</span><span class="o">=</span><span class="n">pheno</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;group&quot;</span><span class="p">,</span> <span class="s">&quot;Fx&quot;</span><span class="p">,</span> <span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="s">&quot;Batch&quot;</span><span class="p">,</span> <span class="s">&quot;TRAB_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TRAB_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TOT_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;TOT_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_A_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_DEN_RAD_4&quot;</span><span class="p">,</span> <span class="s">&quot;CRT_THK_C_RAD_4&quot;</span><span class="p">)],</span> <span class="n">pcs</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="n">corr_var</span> <span class="o">%&gt;%</span>
+   <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">corr_var</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">corr_var</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">rownames_to_column</span><span class="p">()</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate</span><span class="p">(</span><span class="n">rowname</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="n">rowname</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">rename_all</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">,</span> <span class="o">~</span> <span class="nf">round</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span> <span class="o">%&gt;%</span>
+   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">,</span> <span class="o">~</span><span class="nf">cell_spec</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">.</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">)))</span> <span class="o">%&gt;%</span>
+   <span class="nf">column_to_rownames</span><span class="p">()</span> <span class="o">%&gt;%</span>
+   <span class="nf">kable</span><span class="p">(</span><span class="n">escape</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">caption</span> <span class="o">=</span> <span class="s">&quot;P values of correlation test of metadata with PCs. Kruskal-Willis test for categorical data and Spearman correlation for continuous data. PCA calculated using the 10 000 most variable probes.&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+   <span class="nf">kable_styling</span><span class="p">(</span><span class="n">full_width</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">latex_options</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;scale_down&quot;</span><span class="p">,</span> <span class="s">&quot;hold_position&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The batch effect is even a little bit more clear when looking at the PC2 vs PC3 of this most variable subset of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">fviz_pca_ind</span><span class="p">(</span><span class="n">p_var</span><span class="p">,</span>
+         <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span>
+         <span class="n">geom.ind</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;point&quot;</span><span class="p">,</span> <span class="s">&quot;text&quot;</span><span class="p">),</span>
+         <span class="n">pointshape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span>
+         <span class="n">fill.ind</span> <span class="o">=</span> <span class="n">pheno</span><span class="o">$</span><span class="n">Batch</span><span class="p">,</span>
+         <span class="n">palette</span> <span class="o">=</span> <span class="s">&quot;jco&quot;</span><span class="p">,</span>
+         <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;10 000 most variable probes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>CONCLUSION: There is not so much structure in the data except for the batch effect. There seems to be some correlation with the continuous phenotypical covariates. How does this reflect on the differential methylation?</p>
+</div>
+<div class="section" id="differential-methylation-bmd-and-fractures">
+<h3>Differential methylation BMD and Fractures<a class="headerlink" href="#differential-methylation-bmd-and-fractures" title="Permalink to this headline">¶</a></h3>
+<p>Earlier analysis was done on Combat adjusted data and did not result in significantly differentially methylated probes for the Fracture or BMD comparisons. The question now is whether including the batch effect in the linear model might yield more results.</p>
+<div class="section" id="probe-level">
+<h4>Probe Level<a class="headerlink" href="#probe-level" title="Permalink to this headline">¶</a></h4>
+<p>To assess the different methylation levels, we used the limma R package. Covariates included in each model are the batch effect and the cell type composition as calculated by the group.</p>
+<p>After multiple correction no single probes pass the significance threshold. A quick literature search reveals that on the single probe level several bone/osteoporosis articles failed to show significant methylation levels.</p>
+<p>Full results for these differential methylation comparisons are collected in the “Probes” folder.</p>
+</div>
+<div class="section" id="region-level">
+<h4>Region Level<a class="headerlink" href="#region-level" title="Permalink to this headline">¶</a></h4>
+<p>Differential methylation is often evaluated at a regional level - so not single changed CpG sites but multiple close sites that are methylated similarly.</p>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/30753302/">mCGSEA (methylated CpGs Set Enrichment Analysis)</a> is a GSEA-based differential methylation analysis where gene sets are defined as sets of CpG sites in predefined regions. This new tool is capable to detect subtle but consistent methylation differences in predefined genomic regions from 450 K and EPIC microarrays data. The predefined regions are promoter regions, genes and CpG islands.</p>
+<p><strong>mCSEA is based on Gene Set Enrichment analysis (GSEA), a popular methodology for functional analysis that was specifically designed to avoid some drawbacks in the field of gene expression. GSEA is able to detect significant gene sets that exhibit strong cross-correlation when differential expression of individual genes is modest from the statistical point of view. GSEA uses a given statistical metric to rank all genes of a genome and applies a weighted Kolmogorov–Smirnov (KS) statistic to calculate an Enrichment Score (ES). Basically, ES for each set is calculated running through the entire ranked list increasing the score when a gene in the set is encountered and decreasing the score when the gene encountered is not in the analyzed set. ES of this set is the maximum difference from 0.</strong></p>
+<p>The statistic that is used in this package to rank the probes is the t-statistic from the limma test of the individual probes. This statistic is somewhat similar to the log2 fold change normalized to the standard error of the probe.</p>
+<p>The ES and NES (ES normalized for set size) of a set are calculated by looking at where the statistics of probes belonging to a certain set can be found in the ranked probe list. A high (N)ES indicates these probes are found high up in the list of “BMD high vs low” or “fractures vs no fractures”. In other words, a high (N)ES value means that for the probes in this set there is - on average - a shift towards a higher methylation in high BMD or fracture versus no fracture.</p>
+<p>The significance of each (N)ES is calculated permuting the sets and recomputing ES, getting a null distribution for the ES. A multiple comparison correction is also performed on the p values.</p>
+<p>Results for these comparisons are collected in the “Regions” folder. Each excel result file has three tabs for the three predefined regions:</p>
+<ul class="simple">
+<li><p>Genes: probes belonging to the body of a gene</p></li>
+<li><p>Promoters: probes belonging to the promoter of a gene</p></li>
+<li><p>CpG Islands: probes belonging to CpG Islands</p></li>
+</ul>
+<p>More info on method and results can be found in the linked paper at the top of this section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mains</span>	<span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="s">&quot;Fx&quot;</span><span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">main</span> <span class="n">in</span> <span class="n">mains</span><span class="p">){</span>
+<span class="n">mod</span> <span class="o">&lt;-</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="nf">as.formula</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;~ 0 + &quot;</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="s">&quot; + Batch + CD8T + CD4T + NK + Bcell + Mono + Neu&quot;</span><span class="p">)),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pheno</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmFit</span><span class="p">(</span><span class="n">MNQ</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+<span class="nf">if</span><span class="p">(</span><span class="n">main</span> <span class="o">==</span> <span class="s">&quot;Fx&quot;</span><span class="p">){</span>
+   <span class="n">contMatrix</span> <span class="o">&lt;-</span> <span class="nf">makeContrasts</span><span class="p">(</span><span class="n">contrasts</span> <span class="o">=</span> <span class="s">&quot;FxFx-FxnoFx&quot;</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="n">mod</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+   <span class="n">contMatrix</span> <span class="o">&lt;-</span> <span class="nf">makeContrasts</span><span class="p">(</span><span class="n">contrasts</span> <span class="o">=</span> <span class="s">&quot;BMDHigh-BMDLow&quot;</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="n">mod</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">fit_contrast</span>	<span class="o">&lt;-</span> <span class="nf">contrasts.fit</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">contMatrix</span><span class="p">)</span>
+<span class="n">fit_res</span>	<span class="o">&lt;-</span> <span class="nf">eBayes</span><span class="p">(</span><span class="n">fit_contrast</span><span class="p">)</span>
+
+<span class="nf">write.xlsx</span><span class="p">(</span><span class="nf">topTable</span><span class="p">(</span><span class="n">fit_res</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">Inf</span><span class="p">),</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Results/Probes/&quot;</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="s">&quot;.xlsx&quot;</span><span class="p">),</span> <span class="n">row.names</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="n">myRank</span> 	<span class="o">&lt;-</span> <span class="nf">rankProbes</span><span class="p">(</span><span class="n">MNQ</span><span class="p">,</span>
+                      <span class="n">pheno</span><span class="p">,</span> 
+                      <span class="n">explanatory</span> <span class="o">=</span> <span class="n">main</span><span class="p">,</span> 
+                      <span class="n">covariates</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Batch&quot;</span><span class="p">,</span> <span class="s">&quot;CD8T&quot;</span><span class="p">,</span> <span class="s">&quot;CD4T&quot;</span><span class="p">,</span> <span class="s">&quot;NK&quot;</span><span class="p">,</span> <span class="s">&quot;Bcell&quot;</span><span class="p">,</span> <span class="s">&quot;Mono&quot;</span><span class="p">,</span> <span class="s">&quot;Neu&quot;</span><span class="p">),</span>
+                      <span class="n">continuous</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;CD8T&quot;</span><span class="p">,</span> <span class="s">&quot;CD4T&quot;</span><span class="p">,</span> <span class="s">&quot;NK&quot;</span><span class="p">,</span> <span class="s">&quot;Bcell&quot;</span><span class="p">,</span> <span class="s">&quot;Mono&quot;</span><span class="p">,</span> <span class="s">&quot;Neu&quot;</span><span class="p">),</span> 
+                      <span class="n">typeInput</span> <span class="o">=</span> <span class="s">&quot;M&quot;</span><span class="p">)</span>
+<span class="n">myTest</span>	<span class="o">&lt;-</span>  <span class="nf">mCSEATest</span><span class="p">(</span><span class="n">myRank</span><span class="p">,</span> 
+                      <span class="n">MNQ</span><span class="p">,</span> 
+                      <span class="n">pheno</span> <span class="o">=</span> <span class="n">pheno</span><span class="p">,</span> 
+                      <span class="n">column</span> <span class="o">=</span> <span class="n">main</span><span class="p">,</span> 
+                      <span class="n">regionsTypes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;promoters&quot;</span><span class="p">,</span> <span class="s">&quot;genes&quot;</span><span class="p">,</span> <span class="s">&quot;CGI&quot;</span><span class="p">),</span> 
+                      <span class="n">platform</span> <span class="o">=</span> <span class="s">&quot;EPIC&quot;</span><span class="p">)</span>
+
+<span class="nf">write.xlsx</span><span class="p">(</span><span class="n">myTest</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;genes&quot;</span><span class="p">,</span> <span class="s">&quot;promoters&quot;</span><span class="p">,</span> <span class="s">&quot;CGI&quot;</span><span class="p">)],</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Results/Regions/mCSEA_&quot;</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="s">&quot;.xlsx&quot;</span><span class="p">),</span> <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="differential-methylation-qct">
+<h3>Differential methylation QCT<a class="headerlink" href="#differential-methylation-qct" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Probe Level<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>To assess the different methylation levels for the QCT measurements, we again used the limma R package. Covariates included in each model are again the batch effect and the cell type composition as calculated by the group.</p>
+<p>After multiple correction no single probes pass the significance threshold.</p>
+<p>As before, results for these comparisons are collected in the “Probes” folder.</p>
+</div>
+<div class="section" id="id2">
+<h4>Region Level<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>As before, probes are ranked according to the t-statistic of their association with the QCT value and used as input for the mCSEA analysis. A higher (N)ES value means that for the probes in this set there is - on average - a shift towards a higher methylation in higher values of the QCT measurement.</p>
+<p>Results for these comparisons are also collected in the “Regions” folder. Each excel has three tabs:</p>
+<ul class="simple">
+<li><p>Genes: probes belonging to the body of a gene</p></li>
+<li><p>Promoters: probes belonging to the promoter of a gene</p></li>
+<li><p>CpG Islands: probes belonging to CpG Islands</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">QCTs</span>	<span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;TRAB_A_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;TRAB_DEN_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;TOT_A_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;TOT_DEN_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;CRT_A_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;CRT_DEN_RAD_4&quot;</span><span class="p">,</span>
+            <span class="s">&quot;CRT_THK_C_RAD_4&quot;</span><span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">qct</span> <span class="n">in</span> <span class="n">QCTs</span><span class="p">){</span>
+<span class="n">mod</span> <span class="o">&lt;-</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="nf">as.formula</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;~ &quot;</span><span class="p">,</span> <span class="n">qct</span><span class="p">,</span> <span class="s">&quot; + Batch + CD8T + CD4T + NK + Bcell + Mono + Neu&quot;</span><span class="p">)),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pheno</span><span class="p">)</span>
+<span class="n">M_cont</span>	<span class="o">&lt;-</span> <span class="n">MNQ</span><span class="p">[,</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">mod</span><span class="p">)]</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmFit</span><span class="p">(</span><span class="n">M_cont</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+<span class="n">fit_contrast</span> 	<span class="o">&lt;-</span> <span class="nf">contrasts.fit</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">coefficients</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">fit_res</span>	<span class="o">&lt;-</span> <span class="nf">eBayes</span><span class="p">(</span><span class="n">fit_contrast</span><span class="p">)</span>
+
+<span class="nf">write.xlsx</span><span class="p">(</span><span class="nf">topTable</span><span class="p">(</span><span class="n">fit_res</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">Inf</span><span class="p">),</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Results/Probes/&quot;</span><span class="p">,</span> <span class="n">qct</span><span class="p">,</span> <span class="s">&quot;.xlsx&quot;</span><span class="p">),</span> <span class="n">row.names</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="n">myRank</span> 	<span class="o">&lt;-</span> <span class="nf">setNames</span><span class="p">(</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">fit_res</span><span class="o">$</span><span class="n">t</span><span class="p">),</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">fit_res</span><span class="o">$</span><span class="n">t</span><span class="p">))</span>
+<span class="n">myTest</span>	<span class="o">&lt;-</span>  <span class="nf">mCSEATest</span><span class="p">(</span><span class="n">myRank</span><span class="p">,</span> 
+                      <span class="n">MNQ</span><span class="p">,</span> 
+                      <span class="n">pheno</span> <span class="o">=</span> <span class="n">pheno</span><span class="p">,</span> 
+                      <span class="n">column</span> <span class="o">=</span> <span class="n">qct</span><span class="p">,</span> 
+                      <span class="n">regionsTypes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;promoters&quot;</span><span class="p">,</span> <span class="s">&quot;genes&quot;</span><span class="p">,</span> <span class="s">&quot;CGI&quot;</span><span class="p">),</span> 
+                      <span class="n">platform</span> <span class="o">=</span> <span class="s">&quot;EPIC&quot;</span><span class="p">)</span>
+<span class="nf">write.xlsx</span><span class="p">(</span><span class="n">myTest</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;genes&quot;</span><span class="p">,</span> <span class="s">&quot;promoters&quot;</span><span class="p">,</span> <span class="s">&quot;CGI&quot;</span><span class="p">)],</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Results/Regions/mCSEA_&quot;</span><span class="p">,</span> <span class="n">qct</span><span class="p">,</span> <span class="s">&quot;.xlsx&quot;</span><span class="p">),</span> <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="qct-data">
+<h3>QCT Data<a class="headerlink" href="#qct-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="pca">
+<h4>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h4>
+<p>To look for further structure in the QCT data, a PCA on this data was performed as well (see Figure &#64;ref(fig:qct-pca)). On visual inspection, it seems there might be a slight difference between Low_NoFx and the other groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform a pca pn the clinical data only</span>
+<span class="n">pheno_clin</span> 	<span class="o">&lt;-</span> <span class="n">pheno</span> <span class="o">%&gt;%</span>
+  <span class="nf">as.data.frame</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="nf">ends_with</span><span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">drop_na</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">as.matrix</span><span class="p">()</span>
+<span class="n">p_clin</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="n">pheno_clin</span><span class="p">,</span> <span class="n">scale.</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">fviz_pca_ind</span><span class="p">(</span><span class="n">p_clin</span><span class="p">,</span>
+            <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+            <span class="c1">#geom.var = c(&quot;arrow&quot;, &quot;text&quot;),</span>
+            <span class="n">pointshape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span>
+            <span class="n">geom.ind</span> <span class="o">=</span> <span class="s">&quot;point&quot;</span><span class="p">,</span>
+            <span class="n">fill.ind</span> <span class="o">=</span> <span class="n">pheno</span><span class="p">[</span><span class="nf">rownames</span><span class="p">(</span><span class="n">pheno_clin</span><span class="p">),</span> <span class="s">&quot;group&quot;</span><span class="p">],</span>
+            <span class="n">legend.title</span> <span class="o">=</span> <span class="s">&quot;Group&quot;</span><span class="p">,</span>
+            <span class="c1">#repel = TRUE,</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comparative-statistics">
+<h4>Comparative statistics<a class="headerlink" href="#comparative-statistics" title="Permalink to this headline">¶</a></h4>
+<p>Simple comparative statistics per group for the different QCT measurements are visualized below and give a bit more info on the data structure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> 	<span class="o">&lt;-</span> <span class="n">pheno</span> <span class="o">%&gt;%</span>
+  <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="nf">ends_with</span><span class="p">(</span><span class="s">&quot;RAD_4&quot;</span><span class="p">),</span>
+  <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;metric&quot;</span><span class="p">,</span>
+  <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span>
+  <span class="n">values_drop_na</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggboxplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;BMD&quot;</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="s">&quot;jitter&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">facet_wrap</span><span class="p">(</span> <span class="o">~</span> <span class="n">metric</span><span class="p">,</span> <span class="n">scales</span> <span class="o">=</span> <span class="s">&quot;free&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">stat_compare_means</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;t.test&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">expand</span> <span class="o">=</span> <span class="nf">expansion</span><span class="p">(</span><span class="n">mult</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> 	<span class="o">&lt;-</span> <span class="n">pheno</span> <span class="o">%&gt;%</span>
+  <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="nf">ends_with</span><span class="p">(</span><span class="s">&quot;RAD_4&quot;</span><span class="p">),</span>
+  <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;metric&quot;</span><span class="p">,</span>
+  <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span>
+  <span class="n">values_drop_na</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggboxplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Fx&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;Fx&quot;</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="s">&quot;jitter&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">facet_wrap</span><span class="p">(</span> <span class="o">~</span> <span class="n">metric</span><span class="p">,</span> <span class="n">scales</span> <span class="o">=</span> <span class="s">&quot;free&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">stat_compare_means</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;t.test&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">expand</span> <span class="o">=</span> <span class="nf">expansion</span><span class="p">(</span><span class="n">mult</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> 	<span class="o">&lt;-</span> <span class="n">pheno</span> <span class="o">%&gt;%</span>
+  <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="nf">ends_with</span><span class="p">(</span><span class="s">&quot;RAD_4&quot;</span><span class="p">),</span>
+  <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;metric&quot;</span><span class="p">,</span>
+  <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span>
+  <span class="n">values_drop_na</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggboxplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="s">&quot;jitter&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">facet_wrap</span><span class="p">(</span> <span class="o">~</span> <span class="n">metric</span><span class="p">,</span> <span class="n">scales</span> <span class="o">=</span> <span class="s">&quot;free&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">stat_compare_means</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;anova&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">expand</span> <span class="o">=</span> <span class="nf">expansion</span><span class="p">(</span><span class="n">mult</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

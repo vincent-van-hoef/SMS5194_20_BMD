@@ -12,3 +12,9 @@ cd report/
 ln -s ../scripts/analysis.Rmd 
 cd ..
 jb build report/
+jb clean report/
+jb build report/
+ls
+cd scripts/
+cd ..
+jb build report/
