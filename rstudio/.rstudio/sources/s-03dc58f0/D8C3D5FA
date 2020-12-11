@@ -1,0 +1,24 @@
+{
+    "id": "D8C3D5FA",
+    "path": "/home/scripts/analysis.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "1397744286",
+    "contents": "",
+    "dirty": false,
+    "created": 1607699601562.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "cursorPosition": "29,10",
+        "scrollLine": "20"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1607699631,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1607699631263,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,42 @@
+---
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+# Example
+
+```{r load_section}
+library("kableExtra")
+library("knitr")
+library("openxlsx")
+library("ggplot2")
+library("PCAtools")
+library("factoextra")
+library("FactoMineR")
+library("cowplot")
+library("ggpubr")
+library("limma")
+library("openxlsx")
+db_file <- "../data/external/Human_GO_bp_no_GO_iea_symbol.gmt"
+```
+
+
+plot now
+
+```{r}
+plot(a)
+```
+
+:::{tip}
+This page itself is written as an [RMarkdown](https://rmarkdown.rstudio.com/) notebook!
+:::
+
+:::{warning}
+This page itself is written as an [RMarkdown](https://rmarkdown.rstudio.com/) notebook!
+:::
+
+
+
