@@ -1,0 +1,22 @@
+---
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: IR
+---
+
+
+# Example
+
+
+```{r}
+a 	<- - c(1:5)
+```
+
+plot now
+
+```{r}
+plot(a)
+```
+
