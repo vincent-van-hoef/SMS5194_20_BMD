@@ -1,836 +1,45 @@
-]0;/home/scriptsrstudio@2cbbd6db60c3:/home/scripts$ [Krstudio@2cbbd6db60c3:/home/scripts$ jb[Kb build re[K[K../report/_build/html/[K[K[K[K[K[K[K[K[K[K[K[K
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/scripts/../report
-[34m[1mConfig Path: [0m/home/scripts/../report/_config.yml
-[34m[1mOutput Path: [0m/home/scripts/../report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mfailed
-failed: source directory has changed
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 9 source files that are out of date
-[01mupdating environment: [39;49;00m[new config] 9 added, 0 changed, 0 removed
-[01mreading sources... [39;49;00m[ 11%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 22%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 33%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[91mException occurred:[39;49;00m
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/kernelspec.py", line 235, in get_kernel_spec
-    raise NoSuchKernel(kernel_name)
-jupyter_client.kernelspec.NoSuchKernel: No such kernel named ir
-[91mThe full traceback has been saved in /tmp/sphinx-err-l932pvil.log, if you want to report the issue to the developers.[39;49;00m
-Please also report this if it was a user error, so that a better error message can be provided next time.
-A bug report can be filed in the tracker at <https://github.com/sphinx-doc/sphinx/issues>. Thanks!
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/sphinx.py", line 141, in build_sphinx
-    app.build(force_all, filenames)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/application.py", line 352, in build
-    self.builder.build_update()
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 297, in build_update
-    self.build(to_build,
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 311, in build
-    updated_docnames = set(self.read())
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 418, in read
-    self._read_serial(docnames)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 439, in _read_serial
-    self.read_doc(docname)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 479, in read_doc
-    doctree = read_doc(self.app, self.env, self.env.doc2path(docname))
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/io.py", line 223, in read_doc
-    pub.publish()
-  File "/usr/local/lib/python3.8/dist-packages/docutils/core.py", line 217, in publish
-    self.document = self.reader.read(self.source, self.parser,
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/io.py", line 128, in read
-    self.parse()
-  File "/usr/local/lib/python3.8/dist-packages/docutils/readers/__init__.py", line 77, in parse
-    self.parser.parse(self.input, document)
-  File "/usr/local/lib/python3.8/dist-packages/myst_nb/parser.py", line 75, in parse
-    ntbk = generate_notebook_outputs(
-  File "/usr/local/lib/python3.8/dist-packages/myst_nb/execution.py", line 138, in generate_notebook_outputs
-    result = single_nb_execution(
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
-    executenb(
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1087, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 74, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 53, in just_run
-    return loop.run_until_complete(coro)
-  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
-    return future.result()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 524, in async_execute
-    async with self.async_setup_kernel(**kwargs):
-  File "/usr/local/lib/python3.8/dist-packages/async_generator/_util.py", line 34, in __aenter__
-    return await self._agen.asend(None)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 482, in async_setup_kernel
-    await self.async_start_new_kernel(**kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 394, in async_start_new_kernel
-    await ensure_async(self.km.start_kernel(extra_arguments=self.extra_arguments, **kwargs))
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 85, in ensure_async
-    result = await obj
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 571, in start_kernel
-    kernel_cmd, kw = self.pre_start_kernel(**kw)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 262, in pre_start_kernel
-    kernel_cmd = self.format_kernel_cmd(extra_arguments=extra_arguments)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 181, in format_kernel_cmd
-    cmd = self.kernel_spec.argv + extra_arguments
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 87, in kernel_spec
-    self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/kernelspec.py", line 235, in get_kernel_spec
-    raise NoSuchKernel(kernel_name)
-jupyter_client.kernelspec.NoSuchKernel: No such kernel named ir
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/bin/jb", line 8, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 829, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 782, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1259, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1066, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 610, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/commands/__init__.py", line 259, in build
-    builder_specific_actions(
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/commands/__init__.py", line 500, in builder_specific_actions
-    raise RuntimeError(_message_box(msg, color="red", doprint=False)) from result
-RuntimeError: 
-[91m===============================================================================[0m
-
-There was an error in building your book. Look above for the cause.
-
-[91m===============================================================================[0m
-
-]0;/home/scriptsrstudio@2cbbd6db60c3:/home/scripts$ jb build ../report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/scripts/../report
-[34m[1mConfig Path: [0m/home/scripts/../report/_config.yml
-[34m[1mOutput Path: [0m/home/scripts/../report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 9 source files that are out of date
-[01mupdating environment: [39;49;00m[new config] 9 added, 0 changed, 0 removed
-[01mreading sources... [39;49;00m[ 11%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 22%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 33%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[91mException occurred:[39;49;00m
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/kernelspec.py", line 235, in get_kernel_spec
-    raise NoSuchKernel(kernel_name)
-jupyter_client.kernelspec.NoSuchKernel: No such kernel named ir
-[91mThe full traceback has been saved in /tmp/sphinx-err-zuk57b47.log, if you want to report the issue to the developers.[39;49;00m
-Please also report this if it was a user error, so that a better error message can be provided next time.
-A bug report can be filed in the tracker at <https://github.com/sphinx-doc/sphinx/issues>. Thanks!
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/sphinx.py", line 141, in build_sphinx
-    app.build(force_all, filenames)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/application.py", line 352, in build
-    self.builder.build_update()
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 297, in build_update
-    self.build(to_build,
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 311, in build
-    updated_docnames = set(self.read())
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 418, in read
-    self._read_serial(docnames)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 439, in _read_serial
-    self.read_doc(docname)
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/builders/__init__.py", line 479, in read_doc
-    doctree = read_doc(self.app, self.env, self.env.doc2path(docname))
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/io.py", line 223, in read_doc
-    pub.publish()
-  File "/usr/local/lib/python3.8/dist-packages/docutils/core.py", line 217, in publish
-    self.document = self.reader.read(self.source, self.parser,
-  File "/usr/local/lib/python3.8/dist-packages/sphinx/io.py", line 128, in read
-    self.parse()
-  File "/usr/local/lib/python3.8/dist-packages/docutils/readers/__init__.py", line 77, in parse
-    self.parser.parse(self.input, document)
-  File "/usr/local/lib/python3.8/dist-packages/myst_nb/parser.py", line 75, in parse
-    ntbk = generate_notebook_outputs(
-  File "/usr/local/lib/python3.8/dist-packages/myst_nb/execution.py", line 138, in generate_notebook_outputs
-    result = single_nb_execution(
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
-    executenb(
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1087, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 74, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 53, in just_run
-    return loop.run_until_complete(coro)
-  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
-    return future.result()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 524, in async_execute
-    async with self.async_setup_kernel(**kwargs):
-  File "/usr/local/lib/python3.8/dist-packages/async_generator/_util.py", line 34, in __aenter__
-    return await self._agen.asend(None)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 482, in async_setup_kernel
-    await self.async_start_new_kernel(**kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 394, in async_start_new_kernel
-    await ensure_async(self.km.start_kernel(extra_arguments=self.extra_arguments, **kwargs))
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 85, in ensure_async
-    result = await obj
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 571, in start_kernel
-    kernel_cmd, kw = self.pre_start_kernel(**kw)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 262, in pre_start_kernel
-    kernel_cmd = self.format_kernel_cmd(extra_arguments=extra_arguments)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 181, in format_kernel_cmd
-    cmd = self.kernel_spec.argv + extra_arguments
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/manager.py", line 87, in kernel_spec
-    self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/kernelspec.py", line 235, in get_kernel_spec
-    raise NoSuchKernel(kernel_name)
-jupyter_client.kernelspec.NoSuchKernel: No such kernel named ir
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/bin/jb", line 8, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 829, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 782, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1259, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1066, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 610, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/commands/__init__.py", line 259, in build
-    builder_specific_actions(
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_book/commands/__init__.py", line 500, in builder_specific_actions
-    raise RuntimeError(_message_box(msg, color="red", doprint=False)) from result
-RuntimeError: 
-[91m===============================================================================[0m
-
-There was an error in building your book. Look above for the cause.
-
-[91m===============================================================================[0m
-
-]0;/home/scriptsrstudio@2cbbd6db60c3:/home/scripts$ jb build ../report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/scripts/../report
-[34m[1mConfig Path: [0m/home/scripts/../report/_config.yml
-[34m[1mOutput Path: [0m/home/scripts/../report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 9 source files that are out of date
-[01mupdating environment: [39;49;00m[new config] 9 added, 0 changed, 0 removed
-[01mreading sources... [39;49;00m[ 11%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 22%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 33%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-[01mreading sources... [39;49;00m[ 44%] [35manalysis_md[39;49;00m                                                                                         Executing: analysis_md in: /home/report
-[01mreading sources... [39;49;00m[ 55%] [35mclosing[39;49;00m                                                                                             [01mreading sources... [39;49;00m[ 66%] [35mdata_responsibility[39;49;00m                                                                                 [01mreading sources... [39;49;00m[ 77%] [35mintro[39;49;00m                                                                                               [01mreading sources... [39;49;00m[ 88%] [35mmaterial_methods[39;49;00m                                                                                    [01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
-[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
-[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis_md.log[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 11%] [32macknowledgements[39;49;00m                                                                                     [01mwriting output... [39;49;00m[ 22%] [32magreed_analyses[39;49;00m                                                                                      [01mwriting output... [39;49;00m[ 33%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[ 44%] [32manalysis_md[39;49;00m                                                                                          [01mwriting output... [39;49;00m[ 55%] [32mclosing[39;49;00m                                                                                              [01mwriting output... [39;49;00m[ 66%] [32mdata_responsibility[39;49;00m                                                                                  [01mwriting output... [39;49;00m[ 77%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[ 88%] [32mmaterial_methods[39;49;00m                                                                                     [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 2 warnings.[39;49;00m
-
-The HTML pages are in ../report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    ../report/_build/html/
-You can look at your book by opening this file in a browser:
-    ../report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/home/scriptsrstudio@2cbbd6db60c3:/home/scripts$ ls
-analysis.ipynb	analysis_md.Rmd
-]0;/home/scriptsrstudio@2cbbd6db60c3:/home/scripts$ cd ..
-]0;/homerstudio@2cbbd6db60c3:/home$ ls
+python
+bash: python: command not found
+]0;/homerstudio@6a69e928adf2:/home$ python3
+Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+]0;/homerstudio@6a69e928adf2:/home$ vim
+[23;0;0t]0;/homerstudio@6a69e928adf2:/home$ ls
 data  docker-compose.test.yml  Dockerfile  documentation  package_check.R  README.md  report  results  rstudio	scripts
-]0;/homerstudio@2cbbd6db60c3:/home$ cd report/
-]0;/home/reportrstudio@2cbbd6db60c3:/home/report$ gp[Khp-import -npf _build/html/
-Enumerating objects: 34, done.
-Counting objects:   2% (1/34)Counting objects:   5% (2/34)Counting objects:   8% (3/34)Counting objects:  11% (4/34)Counting objects:  14% (5/34)Counting objects:  17% (6/34)Counting objects:  20% (7/34)Counting objects:  23% (8/34)Counting objects:  26% (9/34)Counting objects:  29% (10/34)Counting objects:  32% (11/34)Counting objects:  35% (12/34)Counting objects:  38% (13/34)Counting objects:  41% (14/34)Counting objects:  44% (15/34)Counting objects:  47% (16/34)Counting objects:  50% (17/34)Counting objects:  52% (18/34)Counting objects:  55% (19/34)Counting objects:  58% (20/34)Counting objects:  61% (21/34)Counting objects:  64% (22/34)Counting objects:  67% (23/34)Counting objects:  70% (24/34)Counting objects:  73% (25/34)Counting objects:  76% (26/34)Counting objects:  79% (27/34)Counting objects:  82% (28/34)Counting objects:  85% (29/34)Counting objects:  88% (30/34)Counting objects:  91% (31/34)Counting objects:  94% (32/34)Counting objects:  97% (33/34)Counting objects: 100% (34/34)Counting objects: 100% (34/34), done.
-Delta compression using up to 4 threads
-Compressing objects:   5% (1/18)Compressing objects:  11% (2/18)Compressing objects:  16% (3/18)Compressing objects:  22% (4/18)Compressing objects:  27% (5/18)Compressing objects:  33% (6/18)Compressing objects:  38% (7/18)Compressing objects:  44% (8/18)Compressing objects:  50% (9/18)Compressing objects:  55% (10/18)Compressing objects:  61% (11/18)Compressing objects:  66% (12/18)Compressing objects:  72% (13/18)Compressing objects:  77% (14/18)Compressing objects:  83% (15/18)Compressing objects:  88% (16/18)Compressing objects:  94% (17/18)Compressing objects: 100% (18/18)Compressing objects: 100% (18/18), done.
-Writing objects:   5% (1/18)Writing objects:  11% (2/18)Writing objects:  16% (3/18)Writing objects:  22% (4/18)Writing objects:  27% (5/18)Writing objects:  33% (6/18)Writing objects:  38% (7/18)Writing objects:  44% (8/18)Writing objects:  50% (9/18)Writing objects:  55% (10/18)Writing objects:  61% (11/18)Writing objects:  66% (12/18)Writing objects:  72% (13/18)Writing objects:  77% (14/18)Writing objects:  83% (15/18)Writing objects:  88% (16/18)Writing objects:  94% (17/18)Writing objects: 100% (18/18)Writing objects: 100% (18/18), 15.71 KiB | 349.00 KiB/s, done.
-Total 18 (delta 13), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/13)[Kremote: Resolving deltas:   7% (1/13)[Kremote: Resolving deltas:  15% (2/13)[Kremote: Resolving deltas:  23% (3/13)[Kremote: Resolving deltas:  30% (4/13)[Kremote: Resolving deltas:  38% (5/13)[Kremote: Resolving deltas:  46% (6/13)[Kremote: Resolving deltas:  53% (7/13)[Kremote: Resolving deltas:  61% (8/13)[Kremote: Resolving deltas:  76% (10/13)[Kremote: Resolving deltas:  92% (12/13)[Kremote: Resolving deltas: 100% (13/13)[Kremote: Resolving deltas: 100% (13/13), completed with 11 local objects.[K
-To https://github.com/vincent-van-hoef/sms5194_20_BMD.git
-   7257872..3e1835f  gh-pages -> gh-pages
-ghp-import -npf _build/html/[18Pcd report/ghp-import -npf _build/html/[18Pcd report/[K[K[K[K[K[K[K..
-]0;/homerstudio@738bfc3ce457:/home$ cd ..ghp-import -npf _build/html/[18Pcd report/ls[Kcd ..[3Plsjb build ../report/
-Usage: jb build [OPTIONS] PATH_SOURCE
-Try 'jb build -h' for help.
+]0;/homerstudio@6a69e928adf2:/home$ cd report/
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ ls
+acknowledgements.rst  analysis.Rmd  closing.rst  data_responsibility.rst  material_methods.rst	project_description.rst  requirements.txt
+agreed_analyses.rst   _build	    _config.yml  intro.md		  NBIS-logo.png		references.bib		 _toc.yml
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ cat agreed_analyses.rst 
+Requested analyses
+==================]0;/home/reportrstudio@6a69e928adf2:/home/report$ cat data_responsibility.rst 
+===================
+Data Responsibility
+===================
 
-Error: Invalid value for 'PATH_SOURCE': Path '../report/' does not exist.
-]0;/homerstudio@738bfc3ce457:/home$ jb build ../report/[1Preport/[1Preport/[1Preport/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[91m/home/report/analysis_md.rst: WARNING: document not readable. Ignored.[39;49;00m
-[91m/home/report/analysis.rst: WARNING: document not readable. Ignored.[39;49;00m
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 7 source files that are out of date
-[01mupdating environment: [39;49;00m[new config] 7 added, 0 changed, 0 removed
-[01mreading sources... [39;49;00m[ 14%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 28%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 42%] [35mclosing[39;49;00m                                                                                             [01mreading sources... [39;49;00m[ 57%] [35mdata_responsibility[39;49;00m                                                                                 [01mreading sources... [39;49;00m[ 71%] [35mintro[39;49;00m                                                                                               [01mreading sources... [39;49;00m[ 85%] [35mmaterial_methods[39;49;00m                                                                                    [01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
-[91m/home/report/analysis_md.rst: WARNING: document not readable. Ignored.[39;49;00m
-[91m/home/report/analysis.rst: WARNING: document not readable. Ignored.[39;49;00m
-[91m/home/report/intro.md:31: WARNING: toctree contains reference to nonexisting document 'analysis'[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 14%] [32macknowledgements[39;49;00m                                                                                     [01mwriting output... [39;49;00m[ 28%] [32magreed_analyses[39;49;00m                                                                                      [01mwriting output... [39;49;00m[ 42%] [32mclosing[39;49;00m                                                                                              [01mwriting output... [39;49;00m[ 57%] [32mdata_responsibility[39;49;00m                                                                                  [01mwriting output... [39;49;00m[ 71%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[ 85%] [32mmaterial_methods[39;49;00m                                                                                     [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
-[91m/home/report/intro.md:12: WARNING: unknown document: analysis[39;49;00m
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 6 warnings.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@738bfc3ce457:/home$ ls
+- **NBIS & Uppnex** Unfortunately, we do not have resources to keep any files associated with the support request. We suggest that you safely store the results delivered by us. In addition, we ask that you remove the files from UPPMAX/UPPNEX after analysis is completed. The main storage at UPPNEX is optimized for high-speed and parallel access, which makes it expensive and not the right place for long time archiving.
+- **Sensitive data** Please note that special considerations may apply to the human-derived sensitive personal data. These should be handled according to specific laws and regulations.
+- **Long-term backup** The responsibility for data archiving lies with universities and we recommend asking your local IT for support with long-term data archiving. Also the newly established Data Office at SciLifeLab may be of help to discuss other options.]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ 
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ ls
+acknowledgements.rst  analysis.Rmd  closing.rst  data_responsibility.rst  material_methods.rst	project_description.rst  requirements.txt
+agreed_analyses.rst   _build	    _config.yml  intro.md		  NBIS-logo.png		references.bib		 _toc.yml
+]0;/home/reportrstudio@6a69e928adf2:/home/report$ cd ..
+]0;/homerstudio@6a69e928adf2:/home$ cd ,,
+bash: cd: ,,: No such file or directory
+]0;/homerstudio@6a69e928adf2:/home$ cd ..
+]0;/rstudio@6a69e928adf2:/$ ls
+bin  boot  dev	etc  home  init  lib  lib32  lib64  libexec  libx32  media  mnt  opt  package_check.R  proc  rocker_scripts  root  run	sbin  srv  sys	tmp  usr  var
+]0;/rstudio@6a69e928adf2:/$ cd home/
+]0;/homerstudio@6a69e928adf2:/home$ ls
 data  docker-compose.test.yml  Dockerfile  documentation  package_check.R  README.md  report  results  rstudio	scripts
-]0;/homerstudio@738bfc3ce457:/home$ cd re[Keport/
-]0;/home/reportrstudio@738bfc3ce457:/home/report$ ln -s ../scripts/analysis.Rmd 
-]0;/home/reportrstudio@738bfc3ce457:/home/report$ cd ..
-]0;/homerstudio@738bfc3ce457:/home$ cd ..ln -s ../scripts/analysis.Rmd [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pcd report/ls[Kjb build report/../report/[3Preport/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
-[01mupdating environment: [39;49;00m1 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[ 50%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-[01mreading sources... [39;49;00m[100%] [35mintro[39;49;00m                                                                                               
-[91m/home/report/analysis_md.rst: WARNING: document not readable. Ignored.[39;49;00m
-[91mWARNING: multiple files found for the document "analysis": ['analysis.Rmd', 'analysis.ipynb']
-Use '/home/report/analysis.Rmd' for the build.[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 2 warnings.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mno targets are out of date.[39;49;00m
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/[1P report/[1P report/[1P report/[1P report/[1P report/c report/l report/e report/a report/n report/
-
-[92m===============================================================================[0m
-
-Your _build directory has been emptied except for .jupyter_cache
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb clean report/build[C[C[C[C[C[C[C[C
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mmaking output directory... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 8 source files that are out of date
-[01mupdating environment: [39;49;00m[new config] 8 added, 0 changed, 0 removed
-[01mreading sources... [39;49;00m[ 12%] [35macknowledgements[39;49;00m                                                                                    [01mreading sources... [39;49;00m[ 25%] [35magreed_analyses[39;49;00m                                                                                     [01mreading sources... [39;49;00m[ 37%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-[01mreading sources... [39;49;00m[ 50%] [35mclosing[39;49;00m                                                                                             [01mreading sources... [39;49;00m[ 62%] [35mdata_responsibility[39;49;00m                                                                                 [01mreading sources... [39;49;00m[ 75%] [35mintro[39;49;00m                                                                                               [01mreading sources... [39;49;00m[ 87%] [35mmaterial_methods[39;49;00m                                                                                    [01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 12%] [32macknowledgements[39;49;00m                                                                                     [01mwriting output... [39;49;00m[ 25%] [32magreed_analyses[39;49;00m                                                                                      [01mwriting output... [39;49;00m[ 37%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[ 50%] [32mclosing[39;49;00m                                                                                              [01mwriting output... [39;49;00m[ 62%] [32mdata_responsibility[39;49;00m                                                                                  [01mwriting output... [39;49;00m[ 75%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[ 87%] [32mmaterial_methods[39;49;00m                                                                                     [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_3_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mno targets are out of date.[39;49;00m
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mno targets are out of date.[39;49;00m
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 1 warning.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_4_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying images... [39;49;00m[100%] [33m_build/jupyter_execute/analysis_4_0.png[39;49;00m                                                              
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ ls
-data  docker-compose.test.yml  Dockerfile  documentation  package_check.R  README.md  report  results  rstudio	scripts
-]0;/homerstudio@24f6b804384b:/home$ cd scripts/
-]0;/home/scriptsrstudio@24f6b804384b:/home/scripts$ cd scripts/ls[Kcd scripts/[Kcd ..
-]0;/homerstudio@24f6b804384b:/home$ cd ..scripts/ls[Kjb build report/clean[C[C[C[C[C[C[C[Cbuild[C[C[C[C[C[C[C[C
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 2 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 2 changed, 0 removed
-[01mreading sources... [39;49;00m[ 50%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-[01mreading sources... [39;49;00m[100%] [35mproject_description[39;49;00m                                                                                 
-[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 33%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[ 66%] [32mintro[39;49;00m                                                                                                [01mwriting output... [39;49;00m[100%] [32mproject_description[39;49;00m                                                                                  
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 1 warning.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ jb build report/
-[32m[1mRunning Jupyter-Book v0.8.3[0m
-[34m[1mSource Folder: [0m/home/report
-[34m[1mConfig Path: [0m/home/report/_config.yml
-[34m[1mOutput Path: [0m/home/report/_build/html
-[01mRunning Sphinx v3.3.1[39;49;00m
-[01mloading pickled environment... [39;49;00mdone
-[01mmyst v0.12.10:[39;49;00m MdParserConfig(renderer='sphinx', commonmark_only=False, dmath_enable=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, amsmath_enable=True, deflist_enable=True, update_mathjax=True, admonition_enable=True, figure_enable=True, disable_syntax=[], html_img_enable=True, url_schemes=['mailto', 'http', 'https'], heading_anchors=None)
-[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
-[01mbuilding [html]: [39;49;00mtargets for 1 source files that are out of date
-[01mupdating environment: [39;49;00m0 added, 1 changed, 0 removed
-[01mreading sources... [39;49;00m[100%] [35manalysis[39;49;00m                                                                                            Executing: analysis in: /home/report
-
-[31mWARNING: Execution Failed with traceback saved in /home/report/_build/html/reports/analysis.log[39;49;00m
-[01mlooking for now-outdated files... [39;49;00mnone found
-[01mpickling environment... [39;49;00mdone
-[01mchecking consistency... [39;49;00mdone
-[01mpreparing documents... [39;49;00mdone
-[01mwriting output... [39;49;00m[ 50%] [32manalysis[39;49;00m                                                                                             [01mwriting output... [39;49;00m[100%] [32mintro[39;49;00m                                                                                                
-[01mgenerating indices... [39;49;00mgenindex done
-[01mwriting additional pages... [39;49;00msearch done
-[01mcopying static files... [39;49;00mdone
-[01mcopying extra files... [39;49;00mdone
-[01mdumping search index in English (code: en)... [39;49;00mdone
-[01mdumping object inventory... [39;49;00mdone
-[01mbuild succeeded, 1 warning.[39;49;00m
-
-The HTML pages are in report/_build/html.
-
-[92m===============================================================================[0m
-
-Finished generating HTML for book.
-Your book's HTML pages are here:
-    report/_build/html/
-You can look at your book by opening this file in a browser:
-    report/_build/html/index.html
-Or paste this line directly into your browser bar:
-    file:///home/report/_build/html/index.html            
-
-[92m===============================================================================[0m
-
-]0;/homerstudio@24f6b804384b:/home$ [Krstudio@24f6b804384b:/home$ [Krstudio@24f6b804384b:/home$ 
+]0;/homerstudio@6a69e928adf2:/home$ 
