@@ -1,6 +1,5 @@
 suppressWarnings(suppressMessages(suppressPackageStartupMessages({
 library("kableExtra")
-library("knitr")
 library("openxlsx")
 library("ggplot2")
 library("PCAtools")
@@ -11,7 +10,7 @@ library("ggpubr")
 library("limma")
 library("openxlsx")
 library("matrixStats")
-library("pcaExplorer")
+#library("pcaExplorer")
 library("dplyr")
 })))
 
@@ -48,4 +47,4 @@ pheno	<- phenoData %>%
 colnames(MQ)	<- rownames(pheno[match(colnames(MQ), pheno$slide_array),]) 
 colnames(MNQ)	<- rownames(pheno[match(colnames(MNQ), pheno$slide_array),]) 
 
-plot(1:10)
+
