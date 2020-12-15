@@ -10,7 +10,7 @@ library("ggpubr")
 library("limma")
 library("openxlsx")
 library("matrixStats")
-#library("pcaExplorer")
+library("pcaExplorer")
 library("dplyr")
 })))
 

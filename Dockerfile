@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install -U jupyter-book ghp-import jupytext
+RUN pip3 install -U jupyter-book ghp-import jupytext sphinxcontrib-bibtex==1.0.0
 
 RUN R -e "install.packages(c('devtools', 'kableExtra', 'openxlsx', 'factoextra', 'FactoMineR', 'cowplot', 'ggpubr'), repos = 'https://cran.rstudio.com')"
 
