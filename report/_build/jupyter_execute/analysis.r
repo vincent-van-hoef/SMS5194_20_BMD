@@ -1,3 +1,5 @@
+setwd("/home/rstudio/scripts")
+
 suppressWarnings(suppressMessages(suppressPackageStartupMessages({
 library("kableExtra")
 library("openxlsx")
@@ -47,4 +49,6 @@ pheno	<- phenoData %>%
 colnames(MQ)	<- rownames(pheno[match(colnames(MQ), pheno$slide_array),]) 
 colnames(MNQ)	<- rownames(pheno[match(colnames(MNQ), pheno$slide_array),]) 
 
+plot(1:100)
 
+a <- "Vincent"

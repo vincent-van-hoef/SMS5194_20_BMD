@@ -272,12 +272,18 @@
                 
   <div class="section" id="analysis">
 <h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This page itself is written as an <a class="reference external" href="https://rmarkdown.rstudio.com/">RMarkdown</a> notebook!</p>
+</div>
 <div class="section" id="previous-work">
 <h2>Previous Work<a class="headerlink" href="#previous-work" title="Permalink to this headline">¶</a></h2>
 <p>The previous work for this project is included here as well.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressWarnings</span><span class="p">(</span><span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">suppressPackageStartupMessages</span><span class="p">({</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;/home/rstudio/scripts&quot;</span><span class="p">)</span>
+
+<span class="nf">suppressWarnings</span><span class="p">(</span><span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">suppressPackageStartupMessages</span><span class="p">({</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;kableExtra&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;openxlsx&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
@@ -333,6 +339,18 @@
 <span class="nf">colnames</span><span class="p">(</span><span class="n">MNQ</span><span class="p">)</span>	<span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">pheno</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">MNQ</span><span class="p">),</span> <span class="n">pheno</span><span class="o">$</span><span class="n">slide_array</span><span class="p">),])</span> 
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="s">&quot;Vincent&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/analysis_4_0.png" src="_images/analysis_4_0.png" />
 </div>
 </div>
 </div>
