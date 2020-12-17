@@ -2,3 +2,4 @@ _Store
 data/
 results/
 report/_build/
+.Rproj.user
